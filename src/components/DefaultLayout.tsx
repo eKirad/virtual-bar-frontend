@@ -1,8 +1,11 @@
 // React imports
 import React, { useState, useEffect } from 'react';
 
+// Component imports
+import UserMenu from './UserMenu';
+
 // Antd imports
-import { Menu, Row, Col, Layout, Avatar } from 'antd';
+import { Menu, Row, Col, Layout } from 'antd';
 
 
 interface IProps { }
@@ -10,10 +13,10 @@ interface IProps { }
 const { SubMenu } = Menu;
 const { Header, Sider, Content } = Layout; 
 
-const userList = ['John', 'Tom', 'Michael', 'Edward'];
+
 
 const DefaultLayout: React.FC<IProps> = (props) => {
-    const [currentUser, setCurrentUser] = useState(userList[0]);
+
     
     return(
         <Layout style={{ minHeight: "100vh" }}>
@@ -21,9 +24,7 @@ const DefaultLayout: React.FC<IProps> = (props) => {
                 <Row>
                     <Col span={24}>
                         <div style={{float: 'right', }}>
-                            <Avatar style={{ backgroundColor: `orange`, verticalAlign: 'middle' }} size="large">
-                                {currentUser}
-                            </Avatar>
+                            <UserMenu/>
                         </div>
                     </Col>
                 </Row>
